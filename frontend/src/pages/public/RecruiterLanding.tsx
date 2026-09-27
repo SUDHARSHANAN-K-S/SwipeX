@@ -1,0 +1,213 @@
+import { Link } from 'react-router-dom';
+import { Briefcase, Building, Users, Activity, MessageSquare, PlusCircle, Search, ArrowRight, ChevronRight, UserCheck, BrainCircuit } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export const RecruiterLanding = () => {
+  const features = [
+    {
+      icon: <PlusCircle className="w-6 h-6 text-purple-500" />,
+      title: 'Streamlined Posting',
+      description: 'Create, edit, and publish engaging job listings in seconds with our intuitive editor.'
+    },
+    {
+      icon: <Search className="w-6 h-6 text-purple-500" />,
+      title: 'Talent Discovery',
+      description: 'Proactively discover and review highly relevant candidate profiles in your talent pool.'
+    },
+    {
+      icon: <UserCheck className="w-6 h-6 text-purple-500" />,
+      title: 'AI-Powered Matching',
+      description: 'Instantly view deep compatibility metrics between job requirements and candidate skills.'
+    },
+    {
+      icon: <Users className="w-6 h-6 text-purple-500" />,
+      title: 'Pipeline Management',
+      description: 'Review applicants and easily manage their progression through your customized pipeline.'
+    },
+    {
+      icon: <MessageSquare className="w-6 h-6 text-purple-500" />,
+      title: 'Seamless Scheduling',
+      description: 'Schedule interviews and communicate updates directly through the unified platform.'
+    },
+    {
+      icon: <Activity className="w-6 h-6 text-purple-500" />,
+      title: 'Recruitment Analytics',
+      description: 'Monitor job activity, applicant drop-offs, and hiring metrics from a powerful dashboard.'
+    }
+  ];
+
+  return (
+    <div className="bg-slate-50 min-h-screen flex flex-col font-sans">
+      {/* Premium Header */}
+      <header className="absolute top-0 w-full z-50 border-b border-white/10 bg-black/10 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+              <Briefcase className="w-5 h-5 text-white" />
+            </div>
+            <span className="font-extrabold text-2xl tracking-tight text-white">SwipeX</span>
+          </Link>
+          <div className="flex items-center gap-6">
+            <Link to="/login?role=recruiter" className="text-white/80 font-medium hover:text-white transition-colors">
+              Log in
+            </Link>
+            <Link to="/register/recruiter" className="bg-white text-slate-900 px-6 py-2.5 rounded-xl font-bold hover:bg-slate-100 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+              Get Started
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
+        <div 
+          className="absolute inset-0 z-0 bg-cover bg-center"
+          style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2940")' }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/80 to-purple-900/70" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left: Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 backdrop-blur-md border border-purple-400/20 text-purple-300 font-semibold text-sm mb-8 shadow-sm">
+              <Building className="w-4 h-4 text-purple-400" /> Built for Recruiters & Companies
+            </div>
+            
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6 drop-shadow-lg">
+              Find the Right <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-400">Talent Faster</span>
+            </h1>
+            
+            <p className="text-xl text-slate-300 mb-10 max-w-xl leading-relaxed drop-shadow">
+              Discover top-tier candidates and manage recruitment with AI-powered matching, making hiring simpler and exponentially more effective.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link to="/register/recruiter" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold rounded-2xl hover:shadow-lg hover:shadow-purple-600/40 hover:-translate-y-1 transition-all text-lg flex items-center justify-center gap-2">
+                Join as Recruiter
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Right: UI Mockup */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            className="hidden lg:block relative"
+          >
+            {/* Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/30 blur-[100px] -z-10 rounded-full"></div>
+            
+            {/* Mockup Card 1 */}
+            <div className="bg-white rounded-[2rem] p-6 shadow-2xl transform -rotate-2 -translate-x-4 hover:rotate-0 hover:translate-x-0 transition-transform duration-500 border border-slate-100">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-200 rounded-full flex items-center justify-center overflow-hidden border-2 border-white shadow-sm">
+                    <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=E9D5FF&color=6B21A8" alt="Candidate" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 text-xl">Sarah Chen</h3>
+                    <p className="text-slate-500 font-medium">Senior Frontend Engineer</p>
+                  </div>
+                </div>
+                <div className="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg font-bold text-sm">
+                  98% Match
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">React</span>
+                <span className="px-3 py-1 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">TypeScript</span>
+                <span className="px-3 py-1 bg-purple-50 text-purple-700 border border-purple-100 rounded-lg text-sm font-medium">System Design</span>
+              </div>
+              <div className="bg-purple-50 p-4 rounded-2xl flex items-start gap-3 border border-purple-100">
+                <BrainCircuit className="w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-purple-900 mb-1">AI Recommendation</p>
+                  <p className="text-sm text-purple-800/80">Candidate possesses strong leadership skills and matches all required technical qualifications perfectly.</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Mockup Card 2 (Background) */}
+            <div className="absolute top-8 right-8 w-full bg-white/60 backdrop-blur-sm rounded-[2rem] p-6 shadow-xl -z-10 transform rotate-3 scale-95 border border-white/50">
+               <div className="flex gap-4 mb-4">
+                 <div className="h-16 w-16 bg-slate-200 rounded-full animate-pulse"></div>
+                 <div className="flex-1">
+                   <div className="h-6 w-1/2 bg-slate-200 rounded-lg mb-2 animate-pulse"></div>
+                   <div className="h-4 w-1/3 bg-slate-200 rounded-lg animate-pulse"></div>
+                 </div>
+               </div>
+               <div className="h-24 w-full bg-slate-200 rounded-2xl animate-pulse"></div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-24 px-6 bg-slate-50 relative">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-purple-50/50 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">Streamline Your Hiring Process</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto font-medium">
+              Powerful, AI-driven tools designed to help you discover, manage, and hire the absolute best talent available.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="group bg-white rounded-[2rem] p-8 border border-slate-200 hover:border-purple-300 shadow-sm hover:shadow-2xl hover:shadow-purple-900/5 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors duration-300">
+                  <div className="group-hover:scale-110 group-hover:brightness-0 group-hover:invert transition-all duration-300">
+                    {feature.icon}
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                <p className="text-slate-600 leading-relaxed font-medium">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-indigo-900" />
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
+        
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight drop-shadow-sm">Ready to scale your team?</h2>
+          <p className="text-indigo-200 text-xl mb-12 font-medium max-w-2xl mx-auto">
+            Join innovative companies hiring faster and smarter with SwipeX's modern recruitment platform.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link to="/register/recruiter" className="px-8 py-4 bg-white text-indigo-900 font-bold rounded-2xl hover:bg-slate-50 hover:scale-105 transition-all shadow-xl text-lg flex items-center justify-center gap-2">
+              Create Recruiter Account
+              <ChevronRight className="w-5 h-5" />
+            </Link>
+            <Link to="/login?role=recruiter" className="px-8 py-4 bg-indigo-800/50 text-white font-bold rounded-2xl hover:bg-indigo-800 transition-all text-lg border border-indigo-400/30 backdrop-blur-sm flex items-center justify-center">
+              Log in to Account
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
